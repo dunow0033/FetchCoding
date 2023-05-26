@@ -21,17 +21,20 @@ class ListItemAdapter() : RecyclerView.Adapter<ListItemAdapter.ListItemViewHolde
     }
 
     override fun onBindViewHolder(holder: ListItemViewHolder, position: Int) {
-        val items = listItems[position]
+        val filteredListItems = listItems.filter { !it.name.isNullOrBlank() }
 
-//        for(i in listItems) {
-//            listItems.fil
-//        }
+        val sortedlistItems = filteredListItems.sortedWith (compareBy({ it.listId }, { it.name }))
 
-        holder.binding.apply {
-            tvID.text = items.id.toString()
-            tvListID.text = items.listId.toString()
-            tvName.text = items.name.toString()
-        }
+        //val listItems4 = listItems3.sortedBy { it.name }
+
+        val items = sortedlistItems[position]
+
+            holder.binding.apply {
+                tvID.text = items.id.toString()
+                tvListID.text = items.listId.toString()
+                tvName.text = items.name
+            }
+
     }
 
     override fun getItemCount(): Int {

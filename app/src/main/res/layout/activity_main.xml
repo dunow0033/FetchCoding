@@ -4,11 +4,11 @@
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
-    tools:context=".MainActivity">
+    tools:context=".ui.MainActivity">
 
     <androidx.fragment.app.FragmentContainerView
         android:id="@+id/fragmentContainerTodos"
-        android:name="com.example.todotypicodeexample.ui.fragments.TodosFragment"
+        android:name="com.example.fetchcoding.ui.fragments.ListItemFragment"
         android:layout_width="match_parent"
         android:layout_height="match_parent"/>
 

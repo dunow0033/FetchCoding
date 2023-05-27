@@ -53,4 +53,9 @@ class ListItemFragment : Fragment() {
         adapter = listItemAdapter
         layoutManager = LinearLayoutManager(requireContext())
     }
+
+    override fun onDestroyView() {
+        super.onDestroyView()
+        _binding = null
+    }
 }

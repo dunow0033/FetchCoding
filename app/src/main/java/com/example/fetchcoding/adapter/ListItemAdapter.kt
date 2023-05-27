@@ -25,8 +25,6 @@ class ListItemAdapter() : RecyclerView.Adapter<ListItemAdapter.ListItemViewHolde
 
         val sortedlistItems = filteredListItems.sortedWith (compareBy({ it.listId }, { it.name }))
 
-        //val listItems4 = listItems3.sortedBy { it.name }
-
         val items = sortedlistItems[position]
 
             holder.binding.apply {
@@ -34,7 +32,6 @@ class ListItemAdapter() : RecyclerView.Adapter<ListItemAdapter.ListItemViewHolde
                 tvListID.text = items.listId.toString()
                 tvName.text = items.name
             }
-
     }
 
     override fun getItemCount(): Int {

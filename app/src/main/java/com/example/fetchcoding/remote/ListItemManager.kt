@@ -9,7 +9,6 @@ class ListItemManager {
         listItemService = retrofit.create(ListItemService::class.java)
     }
 
-
     suspend fun getItems() =
         listItemService.getItems()
 }

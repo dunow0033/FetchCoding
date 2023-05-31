@@ -2,50 +2,66 @@
 <androidx.constraintlayout.widget.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
-    xmlns:app="http://schemas.android.com/apk/res-auto"
-    xmlns:tools="http://schemas.android.com/tools">
+    xmlns:app="http://schemas.android.com/apk/res-auto">
 
     <TextView
         android:id="@+id/tvIDHeading"
-        android:layout_width="150dp"
+        android:layout_width="0dp"
         android:layout_height="wrap_content"
+        android:layout_marginTop="10dp"
+        android:layout_marginBottom="10dp"
         android:gravity="center"
         android:textSize="20sp"
         android:textStyle="bold"
-        app:layout_constraintBottom_toTopOf="@id/rvListItems"
+        app:layout_constraintBottom_toTopOf="@+id/horizontal_rule"
         app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintEnd_toStartOf="@+id/tvListIDHeading"
         app:layout_constraintTop_toTopOf="parent"
         android:text="ID" />
 
     <TextView
         android:id="@+id/tvListIDHeading"
-        android:layout_width="150dp"
+        android:layout_width="0dp"
         android:layout_height="wrap_content"
+        android:layout_marginTop="10dp"
+        android:layout_marginBottom="10dp"
         android:gravity="center"
         android:textSize="20sp"
         android:textStyle="bold"
-        app:layout_constraintBottom_toTopOf="@id/rvListItems"
+        app:layout_constraintBottom_toTopOf="@+id/horizontal_rule"
+        app:layout_constraintStart_toEndOf="@+id/tvIDHeading"
         app:layout_constraintEnd_toStartOf="@+id/tvNameHeading"
         app:layout_constraintTop_toTopOf="parent"
         android:text="ListID" />
 
     <TextView
         android:id="@+id/tvNameHeading"
-        android:layout_width="150dp"
+        android:layout_width="0dp"
         android:layout_height="wrap_content"
+        android:layout_marginTop="10dp"
+        android:layout_marginBottom="10dp"
         android:gravity="center"
         android:textSize="20sp"
         android:textStyle="bold"
-        app:layout_constraintBottom_toTopOf="@id/rvListItems"
+        app:layout_constraintBottom_toTopOf="@+id/horizontal_rule"
         app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toEndOf="@+id/tvListIDHeading"
         app:layout_constraintTop_toTopOf="parent"
         android:text="Name" />
+
+    <View
+        android:id="@+id/horizontal_rule"
+        android:layout_width="match_parent"
+        android:layout_height="2dp"
+        android:background="@android:color/darker_gray"
+        app:layout_constraintBottom_toTopOf="@id/rvListItems" />
+
 
     <androidx.recyclerview.widget.RecyclerView
         android:id="@+id/rvListItems"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
-        app:layout_constraintTop_toBottomOf="@id/tvIDHeading"
+        app:layout_constraintTop_toBottomOf="@+id/horizontal_rule"
         />
 
 </androidx.constraintlayout.widget.ConstraintLayout>

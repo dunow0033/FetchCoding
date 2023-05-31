@@ -4,14 +4,12 @@ import android.os.Bundle
 import android.view.LayoutInflater
 import android.view.View
 import android.view.ViewGroup
-import androidx.core.content.ContentProviderCompat
 import androidx.fragment.app.Fragment
 import androidx.lifecycle.Observer
 import androidx.lifecycle.ViewModelProvider
 import androidx.recyclerview.widget.LinearLayoutManager
 import com.example.fetchcoding.adapter.ListItemAdapter
 import com.example.fetchcoding.databinding.FragmentListItemsBinding
-import com.example.fetchcoding.databinding.ListItemBinding
 import com.example.fetchcoding.remote.ListItemManager
 import com.example.fetchcoding.repository.ListItemRepository
 import com.example.fetchcoding.viewmodel.ListItemViewModel
@@ -36,6 +34,7 @@ class ListItemFragment : Fragment() {
 
     override fun onViewCreated(view: View, savedInstanceState: Bundle?) {
         super.onViewCreated(view, savedInstanceState)
+
         listItemViewModel = ViewModelProvider(
             this,
             ListItemViewModelFactory(ListItemRepository(ListItemManager()))

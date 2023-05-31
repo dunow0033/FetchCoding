@@ -8,5 +8,4 @@ interface ListItemService {
 
     @GET("/hiring.json")
     suspend fun getItems(): Response<List<ListItem>>
-
 }
